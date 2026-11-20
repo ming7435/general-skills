@@ -1,0 +1,4 @@
+interface:
+  display_name: "海报风格库"
+  short_description: "调用已收录的海报样稿制作或修改完整海报，按用户指定的新样稿逐项增加风格"
+  default_prompt: "用 $poster-style-library 按系统风格制作一张上线海报。"

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新品质量门在线管控系统 · 系统风格母版</title>
+<style>
+* { box-sizing: border-box }
+body { margin: 0; background: #071328 }
+#poster {
+  --gate-offset: 0px;
+  --lower-offset: 0px;
+  width: 941px; height: 1672px; position: relative; overflow: hidden;
+  font-family: "HarmonyOS Sans SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  color: #f6fbff; background: #041739 url("background.png") center / cover no-repeat;
+}
+h1,h2,h3,p,ol { margin: 0 }
+ol { list-style: none; padding: 0 }
+header { position: absolute; inset: 28px 42px auto 46px; display: flex; align-items: center; justify-content: space-between }
+header img { width: 264px; height: auto }
+header b { font-size: 31px; font-weight: 700 }
+.identity { position: absolute; top: 126px; left: 40px; right: 40px; text-align: center }
+h1 { font-size: 110px; line-height: 1.16; font-weight: 1000; letter-spacing: -3px; transform: skewX(-8deg) scaleX(1.14); text-shadow: 0 2px 0 #bddeff, 0 0 16px #217dff }
+h1 span { display: block }
+.launch { position: relative; display: grid; place-items: center; margin: 16px auto 0; width: 465px; height: 84px; color: #7fefff; font-weight: 900; font-size: 62px; font-style: italic; letter-spacing: .10em; isolation: isolate; filter: drop-shadow(0 0 7px #178aff) }
+.launch::before,.launch::after { content: ""; position: absolute; z-index: -1; inset: 0; clip-path: polygon(7% 0,93% 0,100% 50%,93% 100%,7% 100%,0 50%); background: #6cecff }
+.launch::after { inset: 4px 5px; background: linear-gradient(#073062,#031b42) }
+.section-title { font-size: 40px; font-weight: 900; line-height: 1.3; text-align: center; font-style: italic; display: flex; justify-content: center; align-items: center; gap: 25px }
+.section-title::before,.section-title::after { content: ""; width: 21%; height: 9px; background: linear-gradient(100deg,transparent,#62eaff); clip-path: polygon(0 39%,78% 39%,79% 4%,87% 4%,93% 90%,85% 90%,78% 54%,0 54%,0 39%,91% 4%,97% 4%,100% 90%,96% 90%,91% 4%) }
+.section-title::after { transform: scaleX(-1) }
+.gate-group { position: absolute; top: calc(533px + var(--gate-offset)); left: 63px; right: 63px }
+.gates { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; margin-top: 24px }
+.panel { position: relative; isolation: isolate; filter: drop-shadow(0 0 5px #007dff88) }
+.panel::before,.panel::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(130deg,#78f5ff,#3190ff 54%,#92faff); clip-path: polygon(14px 0,calc(100% - 14px) 0,100% 14px,100% calc(100% - 14px),calc(100% - 14px) 100%,14px 100%,0 calc(100% - 14px),0 14px) }
+.panel::after { inset: 3px; background: linear-gradient(145deg,#061b42,#063777) }
+.gates li { min-height: 148px; text-align: center; padding: 9px 10px; font-weight: 800; font-size: 32px; line-height: 1.23 }
+.gates span { display: block }
+.gates b { display: block; width: 66%; margin: 6px auto 0; color: #06234c; background: linear-gradient(100deg,#5bbbff,#6be9ff); font: italic 800 36px/1.12 Arial,sans-serif; clip-path: polygon(9% 0,100% 0,91% 100%,0 100%) }
+.rail { height: 5px; background: #67efff; box-shadow: 0 0 8px #0786ff; margin: 25px 30px 0; position: relative }
+.rail i { position: absolute; top: 50%; transform: translate(-50%,-50%); width: 21px; height: 21px; border: 3px solid white; border-radius: 50%; background: #5deaff; box-shadow: inset 0 0 0 3px #167cf5, 0 0 9px #148bff }
+.rail i:nth-child(1) {left:13%}.rail i:nth-child(2){left:50%}.rail i:nth-child(3){left:87%}
+.upgrades,.schedule { position: absolute; left: 66px; right: 66px }
+.upgrades { top: calc(846px + var(--lower-offset)) }
+.features { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px 23px; margin-top: 22px }
+.features li { padding: 12px 24px 12px 45px; min-height: 157px; display: flex; flex-direction: column; justify-content: center }
+h3 { font-size: 37px; font-style: italic; font-weight: 900; line-height: 1.27 }
+.features p { margin-top: 4px; font-size: 26px; line-height: 1.38; color: #b9efff }
+.schedule { top: calc(1271px + var(--lower-offset)) }
+.schedule .section-title { white-space: nowrap; gap: 14px }
+.dates { display: flex; margin-top: 20px }
+.dates li { flex: 1; text-align: center; position: relative }
+.dates li + li::before { content: ""; position: absolute; left: 0; top: 14%; bottom: 12%; border-left: 2px solid #8bd3ff }
+.dates b { display: block; font: italic 800 53px/1.1 Arial,sans-serif }
+.dates span { display: block; font-size: 24px; line-height: 1.5; color: #caf5ff }
+@page {size: 941px 1672px; margin: 0}
+@media print { * { print-color-adjust: exact; -webkit-print-color-adjust: exact } }
+</style>
+</head>
+<body>
+<main id="poster">
+  <header><img src="sany-mark.png" alt="三一 SANY"><b>研发管理总部</b></header>
+  <section class="identity" aria-label="系统名称">
+    <h1><span>新品质量门</span><span>在线管控系统</span></h1>
+    <p class="launch">正式上线</p>
+  </section>
+  <section class="gate-group">
+    <h2 class="section-title">新品质量门管控</h2>
+    <ol class="gates">
+      <li class="panel"><span>样机试制</span><span>决策</span><b>QG1</b></li>
+      <li class="panel"><span>小批试产</span><span>决策</span><b>QG2</b></li>
+      <li class="panel"><span>定型上市</span><span>决策</span><b>QG3</b></li>
+    </ol>
+    <div class="rail" aria-hidden="true"><i></i><i></i><i></i></div>
+  </section>
+  <section class="upgrades">
+    <h2 class="section-title">四项升级</h2>
+    <ol class="features">
+      <li class="panel"><h3>1. 线上化</h3><p>评审审批线上流转，<br>过程记录全程留痕</p></li>
+      <li class="panel"><h3>2. 标准化</h3><p>管控标准强制卡点，<br>不达标不得转阶段</p></li>
+      <li class="panel"><h3>3. 可视化</h3><p>实时查看质量指标，<br>异常一键下钻</p></li>
+      <li class="panel"><h3>4. AI智能审查</h3><p>智能核查交付质量，<br>自动提示改进</p></li>
+    </ol>
+  </section>
+  <section class="schedule">
+    <h2 class="section-title">2026 年上线安排</h2>
+    <ol class="dates">
+      <li><b>11.20</b><span>集团培训</span></li>
+      <li><b>11.30</b><span>模板适配完成</span></li>
+      <li><b>12.01</b><span>正式启用</span></li>
+    </ol>
+  </section>
+</main>
+</body>
+</html>
