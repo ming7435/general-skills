@@ -19,6 +19,6 @@ python -m playwright install chromium
 python scripts/export_poster.py assets/system/layout.html poster.png
 ```
 
-使用已安装的 Chrome 或 Edge 时，加 `--browser-path` 并给出浏览器可执行文件的路径，可省去 Chromium 下载。默认画布为 941 × 1672，`--scale 2` 可导出 1882 × 3344。明确要替换已有文件时可用 `--overwrite`。
+使用已安装的 Chrome 或 Edge 时，加 `--browser-path` 并给出浏览器可执行文件的路径，可省去 Chromium 下载。画布由所选母版决定，系统海报为 941 × 1672，蓝金工程车队邀请函为 1130 × 1598。导出邀请函时把命令中的输入换为 `assets/blue-gold-fleet/layout.html`。`--scale 2` 可等比加倍。明确要替换已有文件时可用 `--overwrite`。
 
 在完整包根目录执行 `python -m unittest discover -s tests -v` 可重跑回归测试。使用本机浏览器时，以环境变量 `POSTER_BROWSER_PATH` 指定浏览器路径。

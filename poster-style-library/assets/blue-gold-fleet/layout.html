@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>工程技术交流日邀请函 · 排版示例</title>
+<style>
+  * { box-sizing: border-box; }
+  :root {
+    --ink: #f2f3f4;
+    --gold: #f5d9a6;
+    --cream: #fae9cd;
+    --song: "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+    --sans: "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  }
+  body { margin: 0; font-family: var(--sans); background: #07173b; }
+  #poster { position: relative; isolation: isolate; overflow: hidden; width: 1130px; height: 1598px; color: var(--ink); }
+  .backdrop { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; }
+  header { position: absolute; top: 36px; left: 68px; right: 70px; height: 56px; display: flex; align-items: center; justify-content: space-between; color: var(--gold); }
+  .brand { font: 600 24px/1.2 var(--song); letter-spacing: 3px; }
+  .brand img { display: block; max-width: 207px; max-height: 56px; object-fit: contain; }
+  header .series { font: 500 24px/1.4 var(--song); letter-spacing: 3px; }
+  .title { position: absolute; top: 103px; width: 100%; text-align: center; color: var(--gold); }
+  .english { font: 90px/1.02 Garamond, "Times New Roman", serif; letter-spacing: 5px; color: #edca8f; }
+  h1 { margin: 0; font: 600 79px/1.14 var(--song); letter-spacing: 12px; text-indent: 12px; }
+  .theme { position: absolute; top: 320px; left: 99px; right: 99px; margin: 0; text-align: center; font: 600 38px/1.3 var(--song); letter-spacing: 2px; color: #fff2d8; }
+  .letter, .signature, .details { position: absolute; left: 99px; right: 99px; }
+  .letter { top: 445px; font: 400 26px/1.68 var(--sans); }
+  .salutation, .details dt { font: 600 31px/1.44 var(--song); color: var(--gold); letter-spacing: 1px; }
+  .hello { margin: 7px 0 4px; }
+  .letter p { margin: 0 0 10px; text-indent: 2em; text-align: justify; }
+  .closing { margin-top: 8px; }
+  .signature { bottom: 650px; text-align: right; }
+  .signature, .details dd { font: 400 24px/1.46 var(--sans); letter-spacing: .75px; color: var(--cream); }
+  .signature time { font-size: 23px; }
+  .details { top: 970px; height: 204px; margin: 0; padding: 5px 4px; display: grid; align-content: space-between; }
+  .details div { display: grid; grid-template-columns: 121px 1fr; align-items: baseline; }
+  .details dd { margin: 0; }
+  footer { position: absolute; top: 1534px; left: 40px; right: 40px; text-align: center; font: 550 29px/1.5 var(--song); letter-spacing: .9px; color: #ffe3b0; }
+</style>
+</head>
+<body>
+<main id="poster">
+  <img class="backdrop" src="background.jpg" alt="">
+  <header><div class="brand">工程交流日</div><div class="series">活动邀请 · 设计示例</div></header>
+  <div class="title"><div class="english" lang="en">INVITATION</div><h1>邀请函</h1></div>
+  <h2 class="theme">走近工程现场<br>共议设备协同</h2>
+  <article class="letter">
+    <div class="salutation">尊敬的受邀嘉宾：</div>
+    <div class="hello">您好！</div>
+    <p>诚邀您参加工程技术交流日。我们将从一段施工现场实录开始，跟随设备的作业顺序，一起看看从土方开挖到运输、压实，各道工序如何衔接。</p>
+    <p>下午的圆桌交流将留给一线案例。欢迎您带来一个工作中遇到的问题，与现场同仁交换经验，共同探讨可以尝试的改进办法。</p>
+    <div class="closing">期待与您相见！</div>
+  </article>
+  <div class="signature"><div>技术交流筹备组</div><time datetime="2026-06-08">发函日期：2026年6月8日</time></div>
+  <dl class="details">
+    <div><dt>时间</dt><dd>6月18日　09:00–16:30</dd></div>
+    <div><dt>地点</dt><dd>活动中心一楼交流厅</dd></div>
+    <div><dt>着装</dt><dd>商务便装</dd></div>
+    <div><dt>联系</dt><dd>会务组 · 请通过报名页留言</dd></div>
+  </dl>
+  <footer>让现场经验成为下一次协作的起点</footer>
+</main>
+</body>
+</html>

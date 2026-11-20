@@ -51,6 +51,26 @@ class PosterTests(unittest.TestCase):
         self.assertNotEqual(self.export().returncode, 0)
         self.assertEqual(self.output.read_bytes(), b"previous")
 
+    def test_fleet_invitation_layout(self):
+        self.layout = ROOT / "assets" / "blue-gold-fleet" / "layout.html"
+        result = self.export()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(struct.unpack(">II", self.output.read_bytes()[16:24]), (1130, 1598))
+
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch(executable_path=BROWSER)
+            page = browser.new_page()
+            page.goto(self.layout.as_uri())
+            page.evaluate("document.fonts.ready")
+            style = "(el) => { const s = getComputedStyle(el); return [s.fontSize, s.fontWeight, s.fontFamily, s.color] }"
+            for first, second in ((".hello", ".letter p"), (".salutation", ".details dt"), (".signature", ".details dd")):
+                self.assertEqual(page.locator(first).first.evaluate(style), page.locator(second).first.evaluate(style))
+            self.assertEqual(page.locator(".signature").evaluate("el => getComputedStyle(el).textAlign"), "right")
+            blocks = [page.locator(selector).bounding_box() for selector in (".theme", ".letter", ".signature", ".details", "footer")]
+            for upper, lower in zip(blocks, blocks[1:]):
+                self.assertLess(upper["y"] + upper["height"], lower["y"])
+            browser.close()
+
     def test_nodes_and_section_spacing(self):
         with sync_playwright() as playwright:
             browser = playwright.chromium.launch(executable_path=BROWSER)
