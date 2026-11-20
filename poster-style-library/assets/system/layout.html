@@ -29,7 +29,8 @@ h1 span { display: block }
 .section-title::before,.section-title::after { content: ""; width: 21%; height: 9px; background: linear-gradient(100deg,transparent,#62eaff); clip-path: polygon(0 39%,78% 39%,79% 4%,87% 4%,93% 90%,85% 90%,78% 54%,0 54%,0 39%,91% 4%,97% 4%,100% 90%,96% 90%,91% 4%) }
 .section-title::after { transform: scaleX(-1) }
 .gate-group { position: absolute; top: calc(533px + var(--gate-offset)); left: 63px; right: 63px }
-.gates { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; margin-top: 24px }
+.flow { position: relative; margin-top: 24px }
+.gates { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px }
 .panel { position: relative; isolation: isolate; filter: drop-shadow(0 0 5px #007dff88) }
 .panel::before,.panel::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(130deg,#78f5ff,#3190ff 54%,#92faff); clip-path: polygon(14px 0,calc(100% - 14px) 0,100% 14px,100% calc(100% - 14px),calc(100% - 14px) 100%,14px 100%,0 calc(100% - 14px),0 14px) }
 .panel::after { inset: 3px; background: linear-gradient(145deg,#061b42,#063777) }
@@ -39,6 +40,17 @@ h1 span { display: block }
 .rail { height: 5px; background: #67efff; box-shadow: 0 0 8px #0786ff; margin: 25px 30px 0; position: relative }
 .rail i { position: absolute; top: 50%; transform: translate(-50%,-50%); width: 21px; height: 21px; border: 3px solid white; border-radius: 50%; background: #5deaff; box-shadow: inset 0 0 0 3px #167cf5, 0 0 9px #148bff }
 .rail i:nth-child(1) {left:13%}.rail i:nth-child(2){left:50%}.rail i:nth-child(3){left:87%}
+.steps { display: none }
+[data-flow="flags"] .rail { display: none }
+[data-flow="flags"] .steps { display: block; position: absolute; inset: 0; width: 100%; height: 180px; pointer-events: none; color: #66efff; filter: drop-shadow(0 0 4px #148bff) }
+[data-flow="flags"] .gates { height: 180px; gap: 0 }
+[data-flow="flags"] .panel { align-self: start; min-height: 0; height: 107px; padding: 49px 0 0 44px; font-size: 27px; text-align: left }
+[data-flow="flags"] .panel:first-child { margin-top: 66px }
+[data-flow="flags"] .panel:nth-child(2) { margin-top: 33px }
+[data-flow="flags"] .panel::before { inset: 5px auto 0 24px; width: 4px; clip-path: none; background: #67efff }
+[data-flow="flags"] .panel::after { inset: 5px auto auto 27px; width: 23px; height: 23px; clip-path: polygon(0 0,100% 50%,0 100%); background: #67efff }
+[data-flow="flags"] .gates span { display: inline }
+[data-flow="flags"] .gates b { position: absolute; left: 57px; top: 0; width: auto; margin: 0; background: transparent; clip-path: none; color: #a2f6ff; font-size: 34px }
 .upgrades,.schedule { position: absolute; left: 66px; right: 66px }
 .upgrades { top: calc(846px + var(--lower-offset)) }
 .features { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px 23px; margin-top: 22px }
@@ -63,14 +75,19 @@ h3 { font-size: 37px; font-style: italic; font-weight: 900; line-height: 1.27 }
     <h1><span>新品质量门</span><span>在线管控系统</span></h1>
     <p class="launch">正式上线</p>
   </section>
-  <section class="gate-group">
+  <section class="gate-group" data-flow="cards">
     <h2 class="section-title">新品质量门管控</h2>
-    <ol class="gates">
-      <li class="panel"><span>样机试制</span><span>决策</span><b>QG1</b></li>
-      <li class="panel"><span>小批试产</span><span>决策</span><b>QG2</b></li>
-      <li class="panel"><span>定型上市</span><span>决策</span><b>QG3</b></li>
-    </ol>
-    <div class="rail" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="flow">
+      <svg class="steps" viewBox="0 0 815 180" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M6 173 H225 L263 140 H497 L535 107 H808 M798 100 L808 107 L798 114" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+      </svg>
+      <ol class="gates">
+        <li class="panel"><span>样机试制</span><span>决策</span><b>QG1</b></li>
+        <li class="panel"><span>小批试产</span><span>决策</span><b>QG2</b></li>
+        <li class="panel"><span>定型上市</span><span>决策</span><b>QG3</b></li>
+      </ol>
+      <div class="rail" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
   </section>
   <section class="upgrades">
     <h2 class="section-title">四项升级</h2>
