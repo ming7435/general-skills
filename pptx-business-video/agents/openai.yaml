@@ -1,0 +1,4 @@
+interface:
+  display_name: "PPT 业务讲解与成果视频"
+  short_description: "从企业原始演示文稿制作有据可查、带配音字幕的业务讲解片与成果短片"
+  default_prompt: "用 $pptx-business-video 把我上传的 PPT 做成业务讲解视频，交付成片、讲解稿、字幕、章节来源和可编辑的 HyperFrames 工程。"
