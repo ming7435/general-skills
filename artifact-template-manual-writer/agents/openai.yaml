@@ -1,0 +1,7 @@
+interface:
+  display_name: "业务图文说明书专家 Manual Writer"
+  short_description: "从能力清单、项目实例和截图生成新手看得懂的操作手册与发布版 PDF"
+  icon_large: "./assets/preview.png"
+  default_prompt: "用 $artifact-template-manual-writer 把这些资料整理成给初次使用者的说明书，每项功能写清怎么操作、要发什么、去哪里看结果，输出 Word 和 PDF。"
+policy:
+  allow_implicit_invocation: true
